@@ -1,0 +1,26 @@
+name: Shopee
+version: '1.0'
+main: org.kazamistudio.shopPlugin.ShopPlugin
+api-version: '1.20'
+load: POSTWORLD
+authors: [ Fox Studio ]
+description: Plugin với đầy đủ các chức năng mở rộng mà bạn có thể tuỳ biến cao
+soft-depend: [Vault,PlayerPoints,TokenManager, VNEconomy, MMOItem, MythicLibs]
+
+commands:
+  shop:
+    description: Open shop GUI
+    usage: /shop
+  shopreload:
+    description: Reload shop data
+    permission: shop.admin
+    usage: /shopreload
+  shopadmin:
+    description: Mở menu quản lý shop
+    permission: shop.admin
+    permission-message: §cBạn không có quyền sử dụng lệnh này.
+
+permissions:
+  shop.admin:
+    description: Quyền quản lý shop
+    default: op

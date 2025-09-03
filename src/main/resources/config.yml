@@ -1,0 +1,22 @@
+# ============================
+# ⚙️ ShopPlugin Configuration
+# ============================
+
+# Loại tiền tệ sử dụng:
+# Hỗ trợ: vault, vneconomy, playerpoints, tokenmanager
+currency:
+  type: vault
+
+# Thời gian giao hàng (tính theo giây/phút)
+delivery-delay-seconds: 30      # thời gian chờ trước khi rương rơi
+delivery-delay-min-minutes: 2   # min delay random
+delivery-delay-max-minutes: 20  # max delay random
+
+# Giới hạn số lượng mua
+max-buy-amount: 128
+
+# Tin nhắn hiển thị cho player
+messages:
+  buy-confirm-title: "&aĐã mua hàng!"
+  delivery-soon-title: "&eĐơn hàng sẽ đến sau {time}s"
+  shop-reloaded: "&aShop đã được reload."
