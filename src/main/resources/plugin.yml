@@ -1,5 +1,5 @@
 name: Shopee
-version: '1.0'
+version: '1.0.1'
 main: org.kazamistudio.shopPlugin.ShopPlugin
 api-version: '1.20'
 load: POSTWORLD

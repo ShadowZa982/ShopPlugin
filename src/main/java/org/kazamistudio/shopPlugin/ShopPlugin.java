@@ -1,8 +1,6 @@
 package org.kazamistudio.shopPlugin;
 
-import net.milkbowl.vault.economy.Economy;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.kazamistudio.shopPlugin.commands.ShopAdminCommand;
 import org.kazamistudio.shopPlugin.commands.ShopCommand;
@@ -13,6 +11,7 @@ import org.kazamistudio.shopPlugin.listener.ShopListener;
 import org.kazamistudio.shopPlugin.manager.ShopManager;
 import org.kazamistudio.shopPlugin.utils.ColorUtil;
 import org.kazamistudio.shopPlugin.utils.EconomyUtil;
+import org.kazamistudio.shopPlugin.utils.UpdateChecker;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -28,6 +27,8 @@ public class ShopPlugin extends JavaPlugin {
 
     private final ShopItemEditorGUI editorGUI = new ShopItemEditorGUI();
 
+    private UpdateChecker checker;
+
     @Override
     public void onEnable() {
         instance = this;
@@ -42,6 +43,9 @@ public class ShopPlugin extends JavaPlugin {
         shopManager = new ShopManager(this);
         shopManager.loadAllCategories();
         deliveryManager = new DeliveryManager(this);
+
+        checker = new UpdateChecker(this);
+        getServer().getPluginManager().registerEvents(checker, this);
 
         getCommand("shop").setExecutor(new ShopCommand(this));
         getCommand("shopreload").setExecutor((sender, cmd, label, args) -> {

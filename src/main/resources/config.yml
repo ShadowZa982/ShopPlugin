@@ -2,6 +2,11 @@
 # ⚙️ ShopPlugin Configuration
 # ============================
 
+update-checker:
+  enabled: true
+  current-version: "1.0.1"
+
+
 # Loại tiền tệ sử dụng:
 # Hỗ trợ: vault, vneconomy, playerpoints, tokenmanager
 currency:
